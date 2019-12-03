@@ -1,3 +1,8 @@
+
+# Created by https://www.gitignore.io/api/node
+# Edit at https://www.gitignore.io/?templates=node
+
+### Node ###
 # Logs
 logs
 *.log
@@ -87,6 +92,14 @@ dist
 # Comment in the public line in if your project uses Gatsby and *not* Next.js
 # https://nextjs.org/blog/next-9-1#public-directory-support
 # public
+# next.js build output
+.next
+
+# nuxt.js build output
+.nuxt
+
+# react / gatsby 
+public/
 
 # vuepress build output
 .vuepress/dist
@@ -102,3 +115,4 @@ dist
 
 # TernJS port file
 .tern-port
+# End of https://www.gitignore.io/api/node
