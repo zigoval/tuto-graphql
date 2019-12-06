@@ -1,0 +1,7 @@
+{
+  "env": {
+    "MONGO_USER": "Zigoval",
+    "MONGO_PASSWORD": "Kb31qrRoAViRq56Y",
+    "MONGO_DB": "events-react-dev"
+  }
+}
