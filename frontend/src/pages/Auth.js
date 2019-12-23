@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Auth.css";
-
+import AuthContext from "../context/auth-context";
 export default () => {
   const [isLogging, setIsLogging] = useState(true);
 
@@ -58,7 +58,13 @@ export default () => {
         return res.json();
       })
       .then(resData => {
-        console.log(resData);
+        if (resData.data.login.token) {
+          AuthContext.login(
+            resData.data.login.token,
+            resData.data.login.userId,
+            resData.data.login.tokenExpiration
+          );
+        }
       })
       .catch(err => console.log(err));
   };
