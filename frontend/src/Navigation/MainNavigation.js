@@ -8,11 +8,11 @@ const mainNavigation = props => (
   <AuthContext.Consumer>
     {context => {
       return (
-        <header className="mainNavigation">
-          <div className="mainNavigation__logo">
+        <header className="main-navigation">
+          <div className="main-navigation__logo">
             <h1>EasyEvent</h1>
           </div>
-          <div className="mainNavigation__items">
+          <div className="main-navigation__items">
             <ul>
               {!context.token && (
                 <li>
@@ -23,9 +23,14 @@ const mainNavigation = props => (
                 <NavLink to="/events">Events</NavLink>
               </li>
               {context.token && (
-                <li>
-                  <NavLink to="/bookings">Bookings</NavLink>
-                </li>
+                <>
+                  <li>
+                    <NavLink to="/bookings">Bookings</NavLink>
+                  </li>
+                  <li>
+                    <button onClick={context.logout}>Logout</button>
+                  </li>
+                </>
               )}
             </ul>
           </div>
