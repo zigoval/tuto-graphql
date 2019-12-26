@@ -1,9 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import "./Auth.css";
 import AuthContext from "../context/auth-context";
+
 export default () => {
   const [isLogging, setIsLogging] = useState(true);
-
+  const authContext = useContext(AuthContext);
+  console.log("authContext", authContext);
   const emailEl = useRef();
   const passwordEl = useRef();
 
@@ -58,8 +60,9 @@ export default () => {
         return res.json();
       })
       .then(resData => {
+        console.log("resData", resData);
         if (resData.data.login.token) {
-          AuthContext.login(
+          authContext.login(
             resData.data.login.token,
             resData.data.login.userId,
             resData.data.login.tokenExpiration
